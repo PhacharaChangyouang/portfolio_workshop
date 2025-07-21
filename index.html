@@ -7,7 +7,7 @@
     <meta name="keywords" content="web developer, full stack, HTML, CSS, JavaScript">
     <meta name="author" content="[Your Name]">
     
-    <title>Phachara - Portfolio</title>
+    <title data-i18n-key="pageTitle">Phachara - Portfolio</title>
     
     <!-- External Resources -->
     <link rel="stylesheet" href="css/style.css">
@@ -24,12 +24,20 @@
                 <a href="#home" aria-label="Go to home section">Portfolio</a>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link" data-i18n-key="navHome">Home</a></li>
+                <li><a href="#about" class="nav-link" data-i18n-key="navAbout">About</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n-key="navSkills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n-key="navProjects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n-key="navContact">Contact</a></li>
             </ul>
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <select id="language-switcher" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="th">ภาษาไทย</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
             <div class="nav-toggle" aria-label="Toggle navigation menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -43,45 +51,59 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Hello, I'm <span class="highlight">Phachara</span></h1>
-                <p class="hero-subtitle">Full Stack Developer</p>
-                <p class="hero-description">I create beautiful and functional web applications using modern technologies</p>
+                <h1 data-i18n-key="heroGreeting">Hello, I'm <span class="highlight">Phachara</span></h1>
+                <p class="hero-subtitle" data-i18n-key="heroSubtitle">Full Stack Developer</p>
+                <p class="hero-description" data-i18n-key="heroDescription">I create beautiful and functional web applications using modern technologies</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary" data-i18n-key="viewWorkBtn">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n-key="getInTouchBtn">Get In Touch</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/profile.jpg" alt="[Your Name] - Profile Picture">
+                <img src="images/123456.jpg" alt="top ">
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-i18n-key="aboutTitle">About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>I am a passionate Full Stack Developer with experience in creating web applications using modern technologies. I love solving complex problems and learning new technologies to deliver exceptional user experiences.</p>
-                        <p>My journey in web development started during my studies in Software Engineering at RMUTL, where I discovered my passion for creating digital solutions that make a difference.</p>
+                        <p data-i18n-key="aboutP1">I am a passionate Full Stack Developer with experience in creating web applications using modern technologies. I love solving complex problems and learning new technologies to deliver exceptional user experiences.</p>
+                        <p data-i18n-key="aboutP2">My journey in web development started during my studies in Software Engineering at RMUTL, where I discovered my passion for creating digital solutions that make a difference.</p>
                         
                         <div class="about-stats">
                             <div class="stat-item">
-                                <h3>2+</h3>
-                                <p>Years Experience</p>
+                                <h3 data-i18n-key="yearsExpCount">2+</h3>
+                                <p data-i18n-key="yearsExpLabel">Years Experience</p>
                             </div>
                             <div class="stat-item">
-                                <h3>15+</h3>
-                                <p>Projects Completed</p>
+                                <h3 data-i18n-key="projectsCompCount">15+</h3>
+                                <p data-i18n-key="projectsCompLabel">Projects Completed</p>
                             </div>
                             <div class="stat-item">
-                                <h3>10+</h3>
-                                <p>Happy Clients</p>
+                                <h3 data-i18n-key="clientsCount">10+</h3>
+                                <p data-i18n-key="clientsLabel">Happy Clients</p>
                             </div>
                         </div>
                     </div>
                     <div class="about-image">
-                        <img src="images/about.jpg" alt="About me - workspace setup">
+                        <img src="images/123457.jpg" alt="setup">
+                    </div>
+                </div>
+                <!-- Education & Certifications -->
+                <div class="education mt-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4" data-i18n-key="educationTitle">Education & Certifications</h3>
+                    <div class="education-item mb-4 p-4 bg-gray-50 rounded-lg shadow-sm">
+                        <h4 class="text-xl font-medium text-gray-700" data-i18n-key="degreeTitle">Bachelor of Software Engineering</h4>
+                        <p class="text-gray-600" data-i18n-key="university">Rajamangala University of Technology Lanna (RMUTL)</p>
+                        <span class="year text-sm text-gray-500" data-i18n-key="degreeYear">2024 - 2028</span>
+                    </div>
+                    <div class="certification-item p-4 bg-gray-50 rounded-lg shadow-sm">
+                        <h4 class="text-xl font-medium text-gray-700" data-i18n-key="bootcampTitle">Web Development Bootcamp</h4>
+                        <p class="text-gray-600" data-i18n-key="bootcampDesc">Completed comprehensive full-stack development course</p>
+                        <span class="year text-sm text-gray-500" data-i18n-key="bootcampYear">2025</span>
                     </div>
                 </div>
             </div>
@@ -89,82 +111,68 @@
 
         <!-- Skills Section -->
         <section id="skills" class="skills">
-            
             <div class="container">
-                <h2 class="section-title">My Skills</h2>
+                <h2 class="section-title" data-i18n-key="skillsTitle">My Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-item">
                         <i class="fab fa-html5" aria-hidden="true"></i>
-                        <h3>HTML5</h3>
-                        <p>Semantic markup, accessibility best practices, and modern HTML5 features</p>
+                        <h3 data-i18n-key="skillHTML">HTML5</h3>
+                        <p data-i18n-key="skillHTMLDesc">Semantic markup, accessibility best practices, and modern HTML5 features</p>
                         <div class="skill-level">
                             <div class="skill-bar" data-skill="90"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <i class="fab fa-css3-alt" aria-hidden="true"></i>
-                        <h3>CSS3</h3>
-                        <p>Responsive design, CSS Grid, Flexbox, animations, and modern CSS techniques</p>
+                        <h3 data-i18n-key="skillCSS">CSS3</h3>
+                        <p data-i18n-key="skillCSSDesc">Responsive design, CSS Grid, Flexbox, animations, and modern CSS techniques</p>
                         <div class="skill-level">
                             <div class="skill-bar" data-skill="85"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <i class="fab fa-js-square" aria-hidden="true"></i>
-                        <h3>JavaScript</h3>
-                        <p>ES6+ features, DOM manipulation, async programming, and modern JavaScript</p>
+                        <h3 data-i18n-key="skillJS">JavaScript</h3>
+                        <p data-i18n-key="skillJSDesc">ES6+ features, DOM manipulation, async programming, and modern JavaScript</p>
                         <div class="skill-level">
                             <div class="skill-bar" data-skill="80"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <i class="fab fa-react" aria-hidden="true"></i>
-                        <h3>React</h3>
-                        <p>Component-based architecture, hooks, state management, and modern React patterns</p>
+                        <h3 data-i18n-key="skillReact">React</h3>
+                        <p data-i18n-key="skillReactDesc">Component-based architecture, hooks, state management, and modern React patterns</p>
                         <div class="skill-level">
                             <div class="skill-bar" data-skill="75"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <i class="fab fa-node-js" aria-hidden="true"></i>
-                        <h3>Node.js</h3>
-                        <p>Server-side development, REST APIs, database integration, and Express.js</p>
+                        <h3 data-i18n-key="skillNode">Node.js</h3>
+                        <p data-i18n-key="skillNodeDesc">Server-side development, REST APIs, database integration, and Express.js</p>
                         <div class="skill-level">
                             <div class="skill-bar" data-skill="70"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <i class="fas fa-database" aria-hidden="true"></i>
-                        <h3>MongoDB</h3>
-                        <p>NoSQL database design, queries, indexing, and performance optimization</p>
+                        <h3 data-i18n-key="skillMongo">MongoDB</h3>
+                        <p data-i18n-key="skillMongoDesc">NoSQL database design, queries, indexing, and performance optimization</p>
                         <div class="skill-level">
                             <div class="skill-bar" data-skill="65"></div>
                         </div>
                     </div>
-                  
-<div class="skill-details">
-    <h4>Professional Experience</h4>
-    <ul>
-        <li>Built 5+ responsive websites using HTML5/CSS3</li>
-        <li>Developed interactive web applications with JavaScript</li>
-        <li>Implemented RESTful APIs with Node.js and Express</li>
-        <li>Managed databases using MongoDB and SQL</li>
-        <li>Collaborated using Git version control</li>
-    </ul>
-</div>
-<div class="education">
-    <h3>Education & Certifications</h3>
-    <div class="education-item">
-        <h4>Bachelor of Software Engineering</h4>
-        <p>Rajamangala University of Technology Lanna (RMUTL)</p>
-        <span class="year">2022 - 2026</span>
-    </div>
-    <div class="certification-item">
-        <h4>Web Development Bootcamp</h4>
-        <p>Completed comprehensive full-stack development course</p>
-        <span class="year">2024</span>
-    </div>
-</div>
+                </div>
+                <!-- Professional Experience details -->
+                <div class="skill-details mt-12 p-8 bg-white rounded-lg shadow-lg">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-4" data-i18n-key="profExpTitle">Professional Experience</h4>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li data-i18n-key="profExp1">Built 5+ responsive websites using HTML5/CSS3</li>
+                        <li data-i18n-key="profExp2">Developed interactive web applications with JavaScript</li>
+                        <li data-i18n-key="profExp3">Implemented RESTful APIs with Node.js and Express</li>
+                        <li data-i18n-key="profExp4">Managed databases using MongoDB and SQL</li>
+                        <li data-i18n-key="profExp5">Collaborated using Git version control</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -172,19 +180,19 @@
         <!-- Projects Section -->
         <section id="projects" class="projects">
             <div class="container">
-                <h2 class="section-title">My Projects</h2>
+                <h2 class="section-title" data-i18n-key="projectsTitle">My Projects</h2>
                 <div class="projects-filter">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="web">Web Apps</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile</button>
-                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n-key="filterAll">All</button>
+                    <button class="filter-btn" data-filter="web" data-i18n-key="filterWeb">Web Apps</button>
+                    <button class="filter-btn" data-filter="mobile" data-i18n-key="filterMobile">Mobile</button>
+                    <button class="filter-btn" data-filter="design" data-i18n-key="filterDesign">Design</button>
                 </div>
                 <div class="projects-grid">
                     <article class="project-card" data-category="web">
-                        <img src="images/project1.jpg" alt="E-commerce Website Project">
+                        <img src="images/1234568.png" alt="E-commerce Website Project">
                         <div class="project-info">
-                            <h3>E-commerce Platform</h3>
-                            <p>A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, and payment integration.</p>
+                            <h3 data-i18n-key="project1Title">E-commerce Platform</h3>
+                            <p data-i18n-key="project1Desc">A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, and payment integration.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">React</span>
                                 <span class="tech-tag">Node.js</span>
@@ -192,17 +200,17 @@
                                 <span class="tech-tag">Stripe API</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">Live Demo</a>
-                                <a href="#" class="btn btn-small btn-secondary" target="_blank" rel="noopener">GitHub</a>
+                                <a href="#" class="btn btn-small" target="_blank" rel="noopener" data-i18n-key="liveDemoBtn">Live Demo</a>
+                                <a href="#" class="btn btn-small btn-secondary" target="_blank" rel="noopener" data-i18n-key="githubBtn">GitHub</a>
                             </div>
                         </div>
                     </article>
                     
                     <article class="project-card" data-category="web">
-                        <img src="images/project2.jpg" alt="Task Management Application">
+                        <img src="images/1234569.png" alt="Task Management Application">
                         <div class="project-info">
-                            <h3>Task Management App</h3>
-                            <p>A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                            <h3 data-i18n-key="project2Title">Task Management App</h3>
+                            <p data-i18n-key="project2Desc">A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">Vue.js</span>
                                 <span class="tech-tag">Socket.io</span>
@@ -210,17 +218,17 @@
                                 <span class="tech-tag">PostgreSQL</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">Live Demo</a>
-                                <a href="#" class="btn btn-small btn-secondary" target="_blank" rel="noopener">GitHub</a>
+                                <a href="#" class="btn btn-small" target="_blank" rel="noopener" data-i18n-key="liveDemoBtn">Live Demo</a>
+                                <a href="#" class="btn btn-small btn-secondary" target="_blank" rel="noopener" data-i18n-key="githubBtn">GitHub</a>
                             </div>
                         </div>
                     </article>
                     
                     <article class="project-card" data-category="mobile">
-                        <img src="images/project3.jpg" alt="Weather Application">
+                        <img src="images/2345678.png" alt="Weather Application">
                         <div class="project-info">
-                            <h3>Weather Forecast App</h3>
-                            <p>A responsive weather application with location-based forecasts, interactive maps, and beautiful weather animations.</p>
+                            <h3 data-i18n-key="project3Title">Weather Forecast App</h3>
+                            <p data-i18n-key="project3Desc">A responsive weather application with location-based forecasts, interactive maps, and beautiful weather animations.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">JavaScript</span>
                                 <span class="tech-tag">Weather API</span>
@@ -228,8 +236,8 @@
                                 <span class="tech-tag">Chart.js</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">Live Demo</a>
-                                <a href="#" class="btn btn-small btn-secondary" target="_blank" rel="noopener">GitHub</a>
+                                <a href="#" class="btn btn-small" target="_blank" rel="noopener" data-i18n-key="liveDemoBtn">Live Demo</a>
+                                <a href="#" class="btn btn-small btn-secondary" target="_blank" rel="noopener" data-i18n-key="githubBtn">GitHub</a>
                             </div>
                         </div>
                     </article>
@@ -240,24 +248,25 @@
         <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-i18n-key="contactTitle">Get In Touch</h2>
                 <div class="contact-content">
                     <div class="contact-info">
-                        <h3>Let's Work Together</h3>
-                        <p>I'm always interested in hearing about new projects and opportunities. Whether you're looking for a developer, have a question, or just want to connect.</p>
+                        <h3 data-i18n-key="contactSubtitle">Let's Connect and Explore New Horizons Together</h3>
+                        <p data-i18n-key="contactP1">As a student with a constant thirst for knowledge and a passion for growth, I'm always eager to hear about exciting new projects and opportunities that offer valuable learning experiences.</p>
+                        <p data-i18n-key="contactP2">Whether you're seeking a collaborative mind to grow with, have questions you'd like to explore, or simply want to connect and share interesting ideas – please don't hesitate to reach out! I truly believe that learning from others and working together is the key to deeper understanding and endless innovation.</p>
                         
                         <div class="contact-details">
                             <div class="contact-item">
                                 <i class="fas fa-envelope" aria-hidden="true"></i>
-                                <span>phachara_ch67@rmutl.live.ac.th</span>
+                                <span data-i18n-key="contactEmail">phachara_ch67@rmutl.live.ac.th</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone" aria-hidden="true"></i>
-                                <span>+66 987 45 659</span>
+                                <span data-i18n-key="contactPhone">+66 987 45 659</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                <span>Bangkok, Thailand</span>
+                                <span data-i18n-key="contactLocation">Chaing Mai, Thailand</span>
                             </div>
                         </div>
                         
@@ -276,22 +285,22 @@
                     
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name" data-i18n-key="formNameLabel">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required data-i18n-placeholder-key="formNamePlaceholder">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <label for="email" data-i18n-key="formEmailLabel">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required data-i18n-placeholder-key="formEmailPlaceholder">
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                            <label for="subject" data-i18n-key="formSubjectLabel">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required data-i18n-placeholder-key="formSubjectPlaceholder">
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                            <label for="message" data-i18n-key="formMessageLabel">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5" required data-i18n-placeholder-key="formMessagePlaceholder"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary" data-i18n-key="sendMessageBtn">
                             <i class="fas fa-paper-plane"></i>
                             Send Message
                         </button>
@@ -305,10 +314,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 [Your Name]. Software Engineering, RMUTL. All rights reserved.</p>
+                <p data-i18n-key="footerCopyright">&copy; 2025 [Your Name]. Software Engineering, RMUTL. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
+                    <a href="#privacy" data-i18n-key="privacyPolicy">Privacy Policy</a>
+                    <a href="#terms" data-i18n-key="termsOfService">Terms of Service</a>
                 </div>
             </div>
         </div>
