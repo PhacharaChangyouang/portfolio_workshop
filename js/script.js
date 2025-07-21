@@ -1,4 +1,3 @@
-// ===== PORTFOLIO WEBSITE JAVASCRIPT =====
 
 class PortfolioWebsite {
     constructor() {
@@ -518,3 +517,107 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+// Feature 2: Advanced JavaScript Techniques
+
+// Intersection Observer with more advanced options
+const advancedObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Add multiple animation classes based on scroll direction
+            const rect = entry.boundingClientRect;
+            const isScrollingDown = rect.top < window.innerHeight / 2;
+            
+            if (isScrollingDown) {
+                entry.target.classList.add('animate-fade-up');
+            } else {
+                entry.target.classList.add('animate-fade-down');
+            }
+            
+            // Add stagger effect for child elements
+            const children = entry.target.querySelectorAll('.animate-child');
+            children.forEach((child, index) => {
+                setTimeout(() => {
+                    child.classList.add('animate-in');
+                }, index * 100);
+            });
+        }
+    });
+}, {
+    threshold: [0.1, 0.5, 0.9],
+    rootMargin: '-10% 0px -10% 0px'
+});
+
+// Advanced scroll-triggered animations
+class ScrollAnimationController {
+    constructor() {
+        this.scrollPosition = 0;
+        this.animationFrame = null;
+        this.init();
+    }
+    
+    init() {
+        window.addEventListener('scroll', () => {
+            if (!this.animationFrame) {
+                this.animationFrame = requestAnimationFrame(() => {
+                    this.handleScroll();
+                    this.animationFrame = null;
+                });
+            }
+        });
+    }
+    
+    handleScroll() {
+        this.scrollPosition = window.scrollY;
+        
+        // Parallax backgrounds
+        const parallaxElements = document.querySelectorAll('.parallax');
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed || 0.5;
+            const yPos = -(this.scrollPosition * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+        
+        // Progress bar for reading
+        const progressBar = document.querySelector('.reading-progress');
+        if (progressBar) {
+            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (this.scrollPosition / windowHeight) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+    }
+}
+
+// Dynamic theme switching
+class ThemeController {
+    constructor() {
+        this.currentTheme = localStorage.getItem('theme') || 'light';
+        this.init();
+    }
+    
+    init() {
+        document.documentElement.setAttribute('data-theme', this.currentTheme);
+        
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+    }
+    
+    toggleTheme() {
+        this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', this.currentTheme);
+        localStorage.setItem('theme', this.currentTheme);
+        
+        // Animate theme transition
+        document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+        setTimeout(() => {
+            document.body.style.transition = '';
+        }, 300);
+    }
+}
+
+// Initialize advanced features
+document.addEventListener('DOMContentLoaded', () => {
+    new ScrollAnimationController();
+    new ThemeController();
+});
